@@ -7,8 +7,16 @@ rescue LoadError
 end
 
 def change_log(stream)
-  ActiveRecord::Base.logger = Logger.new(stream)
-  ActiveRecord::Base.clear_active_connections!
+  logger = Logger.new(stream)
+  
+  if defined?(ActiveRecord)
+    ActiveRecord::Base.logger = logger
+    ActiveRecord::Base.clear_active_connections!
+  end
+  
+  if defined?(Mongoid)
+    Mongoid.config.master.connection.instance_variable_set '@logger', logger
+  end
 end
 
 def show_log
