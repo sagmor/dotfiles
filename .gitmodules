@@ -25,3 +25,6 @@
 [submodule "vim/bundle/endwise"]
 	path = vim/bundle/endwise
 	url = git://github.com/tpope/vim-endwise.git
+[submodule "zsh/git-prompt"]
+	path = zsh/git-prompt
+	url = http://github.com/olivierverdier/zsh-git-prompt.git

@@ -1,3 +1,4 @@
+source ~/.zsh/git-prompt/zshrc.sh
 . ~/.zsh/config
 . ~/.zsh/aliases
 . ~/.zsh/completion
