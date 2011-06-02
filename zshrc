@@ -26,4 +26,12 @@ plugins=(git brew bundler gem github osx pow rails3 rvm vi-mode)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+
+# Load RVM
 [[ -s "/usr/local/rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm"
+
+# Editor options
+export EDITOR="mvim"
+
+alias e = '$EDITOR'
+alias mate = '$EDITOR' # just because i'm too acostumed to type mate :P
