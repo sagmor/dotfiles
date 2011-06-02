@@ -1,0 +1,134 @@
+" Vim graphical configuration.
+
+if has("gui_macvim")
+  " Fullscreen takes up entire screen
+  set fuoptions=maxhorz,maxvert
+  
+  " Command-T for CommandT
+  macmenu &File.New\ Tab key=<D-T>
+  map <D-t> :CommandT<CR>
+  imap <D-t> <Esc>:CommandT<CR>
+  
+  " Command-Return for fullscreen
+  macmenu Window.Toggle\ Full\ Screen\ Mode key=<D-CR>
+  
+  " Command-Shift-F for Ack
+  map <D-F> :Ack<space>
+
+  " Command-e for ConqueTerm
+  map <D-e> :call StartTerm()<CR>
+
+  " Command-/ to toggle comments
+  map <D-/> <plug>NERDCommenterToggle<CR>
+  imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
+
+  " Command-][ to increase/decrease indentation
+  vmap <D-]> >gv
+  vmap <D-[> <gv
+
+  " Command-Option-ArrowKey to switch viewports
+  map <D-M-Up> <C-w>k
+  imap <D-M-Up> <Esc> <C-w>k
+  map <D-M-Down> <C-w>j
+  imap <D-M-Down> <Esc> <C-w>j
+  map <D-M-Right> <C-w>l
+  imap <D-M-Right> <Esc> <C-w>l
+  map <D-M-Left> <C-w>h
+  imap <D-M-Left> <C-w>h  
+endif
+
+
+set guifont=Inconsolata:h16 " Font family and font size.
+set antialias " MacVim: smooth fonts.
+set encoding=utf-8 " Use UTF-8 everywhere.
+set background=dark " Background.
+
+colorscheme solarized
+
+set lines=35 columns=130 " Window dimensions.
+
+set guioptions-=T " Hide toolbar.
+set guioptions-=r " Don't show right scrollbar
+
+" Do not use modal alert dialogs! (Prefer Vim style prompt.)
+" http://stackoverflow.com/questions/4193654/using-vim-warning-style-in-gvim
+set guioptions+=c
+
+" ConqueTerm wrapper
+function StartTerm()
+  execute 'ConqueTerm ' . $SHELL . ' --login'
+  setlocal listchars=tab:\ \
+endfunction
+
+" Utility functions to create file commands
+function s:CommandCabbr(abbreviation, expansion)
+  execute 'cabbrev ' . a:abbreviation . ' <c-r>=getcmdpos() == 1 && getcmdtype() == ":" ? "' . a:expansion . '" : "' . a:abbreviation . '"<CR>'
+endfunction
+
+" Project Tree
+autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
+autocmd FocusGained * call s:UpdateNERDTree()
+autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+
+" Close all open buffers on entering a window if the only
+" buffer that's left is the NERDTree buffer
+function s:CloseIfOnlyNerdTreeLeft()
+  if exists("t:NERDTreeBufName")
+    if bufwinnr(t:NERDTreeBufName) != -1
+      if winnr("$") == 1
+        q
+      endif
+    endif
+  endif
+endfunction
+
+" If the parameter is a directory, cd into it
+function s:CdIfDirectory(directory)
+  let explicitDirectory = isdirectory(a:directory)
+  let directory = explicitDirectory || empty(a:directory)
+
+  if explicitDirectory
+    exe "cd " . fnameescape(a:directory)
+  endif
+
+  " Allows reading from stdin
+  " ex: git diff | mvim -R -
+  if strlen(a:directory) == 0 
+    return
+  endif
+
+  if directory
+    NERDTree
+    wincmd p
+    bd
+  endif
+
+  if explicitDirectory
+    wincmd p
+  endif
+endfunction
+
+" NERDTree utility function
+function s:UpdateNERDTree(...)
+  let stay = 0
+
+  if(exists("a:1"))
+    let stay = a:1
+  end
+
+  if exists("t:NERDTreeBufName")
+    let nr = bufwinnr(t:NERDTreeBufName)
+    if nr != -1
+      exe nr . "wincmd w"
+      exe substitute(mapcheck("R"), "<CR>", "", "")
+      if !stay
+        wincmd p
+      end
+    endif
+  endif
+
+  if exists(":CommandTFlush") == 2
+    CommandTFlush
+  endif
+endfunction
+
