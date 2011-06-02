@@ -33,5 +33,5 @@ source $ZSH/oh-my-zsh.sh
 # Editor options
 export EDITOR="mvim"
 
-alias e = '$EDITOR'
-alias mate = '$EDITOR' # just because i'm too acostumed to type mate :P
+alias e='$EDITOR'
+alias mate='$EDITOR' # just because i'm too acostumed to type mate :P
