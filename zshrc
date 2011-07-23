@@ -21,7 +21,7 @@ export DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew bundler gem github osx pow rails3 rvm vi-mode)
+plugins=(git brew bundler gem github osx pow rails3 rvm vi-mode chef)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -35,3 +35,7 @@ export EDITOR="mvim"
 
 alias e='$EDITOR'
 alias mate='$EDITOR' # just because i'm too acostumed to type mate :P
+
+if [ -f `brew --prefix`/etc/autojump ]; then
+  . `brew --prefix`/etc/autojump
+fi
