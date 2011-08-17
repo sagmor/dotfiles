@@ -70,9 +70,6 @@
 [submodule "vim/bundle/conque"]
 	path = vim/bundle/conque
 	url = git://github.com/rygwdn/vim-conque.git
-[submodule "vim/bundle/jst"]
-	path = vim/bundle/jst
-	url = git://github.com/briancollins/vim-jst.git
 [submodule "vim/bundle/surround"]
 	path = vim/bundle/surround
 	url = git://github.com/tpope/vim-surround.git
