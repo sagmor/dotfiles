@@ -1,9 +1,9 @@
-DOTFILES=`pwd`
+#!/bin/sh
 
 # Install YADR
-ln -s $DOTFILES/yadr ~/.yadr
-cd ~/.yadr
-rake install
+sh -c "`curl -fsSL https://raw.github.com/skwp/dotfiles/master/install.sh`"
+
+# Symlink Dotfiles changes
 
 # Install homebrew Cask
 brew tap phinze/homebrew-cask
@@ -11,6 +11,8 @@ brew install brew-cask
 
 #install apps
 # adium arduino vlc transmit transmission spotify onepassword kindle iterm2 heroku-toolbelt google-hangouts google-chrome github evernote firefox dropbox
-brew cask install
+# brew cask install iterm2
+# brew cask install spotify
+# brew cask install spotify
 
-API_KEY="abcdef123456" brew cask install prey
+#API_KEY="abcdef123456" brew cask install prey
