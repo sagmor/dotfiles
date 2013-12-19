@@ -1,8 +1,9 @@
 #!/bin/sh
 
+# Install Dotfiles
 if [ ! -d "$HOME/.dotfiles" ]; then
     echo "Installing Dotfiles for the first time"
-    git clone https://github.com/sagmor/dotfiles.git "$HOME/.dotfiles --recursive"
+    git clone https://github.com/sagmor/dotfiles.git "$HOME/.dotfiles"
     cd "$HOME/.dotfiles"
     script/setup
 else
