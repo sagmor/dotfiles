@@ -1,0 +1,16 @@
+DOTFILES=`pwd`
+
+# Install YADR
+ln -s $DOTFILES/yadr ~/.yadr
+cd ~/.yadr
+rake install
+
+# Install homebrew Cask
+brew tap phinze/homebrew-cask
+brew install brew-cask
+
+#install apps
+# adium arduino vlc transmit transmission spotify onepassword kindle iterm2 heroku-toolbelt google-hangouts google-chrome github evernote firefox dropbox
+brew cask install
+
+API_KEY="abcdef123456" brew cask install prey
