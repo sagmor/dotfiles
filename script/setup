@@ -4,10 +4,18 @@
 sh -c "`curl -fsSL https://raw.github.com/skwp/dotfiles/master/install.sh`"
 
 # Symlink Dotfiles changes
+rmdir $HOME/.zsh.before
+ln -s $HOME/.dotfiles/zsh/before $HOME/.zsh.before
+rmdir $HOME/.zsh.after
+ln -s $HOME/.dotfiles/zsh/after $HOME/.zsh.after
+ln -s $HOME/.dotfiles/git/config $HOME/.gitconfig.user
 
 # Install homebrew Cask
 brew tap phinze/homebrew-cask
 brew install brew-cask
+
+brew install macvim --custom-icons
+brew linkapps
 
 #install apps
 # adium arduino vlc transmit transmission spotify onepassword kindle iterm2 heroku-toolbelt google-hangouts google-chrome github evernote firefox dropbox
