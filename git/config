@@ -1,0 +1,7 @@
+# vim: filetype=gitconfig:
+[user]
+  name = Seba Gamboa
+  email = me@sagmor.com
+ 
+[branch]
+  autosetuprebase = always
