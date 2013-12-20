@@ -2,6 +2,12 @@
 [user]
   name = Seba Gamboa
   email = me@sagmor.com
- 
+
 [branch]
   autosetuprebase = always
+
+[credential]
+  helper = osxkeychain
+
+[push]
+  default = simple
