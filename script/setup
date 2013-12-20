@@ -9,6 +9,7 @@ ln -s $HOME/.dotfiles/zsh/before $HOME/.zsh.before
 rmdir $HOME/.zsh.after
 ln -s $HOME/.dotfiles/zsh/after $HOME/.zsh.after
 ln -s $HOME/.dotfiles/git/config $HOME/.gitconfig.user
+ln -s $HOME/.dotfiles/vim/vimrc.after $HOME/.vimrc.after
 
 # Install homebrew Cask
 brew tap phinze/homebrew-cask
