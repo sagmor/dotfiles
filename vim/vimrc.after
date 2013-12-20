@@ -1,0 +1,3 @@
+for fpath in split(globpath('~/.dotfiles/vim/after', '*.vim'), '\n')
+  exe 'source' fpath
+endfor
