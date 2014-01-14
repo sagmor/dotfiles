@@ -10,3 +10,6 @@ unalias gst
 alias git="hub"
 alias gl="git pull"
 alias grc='git rebase --continue'
+
+# Bundle
+alias bi="bundle install --path vendor"
