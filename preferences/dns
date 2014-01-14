@@ -1,0 +1,10 @@
+brew install dnsmasq
+
+echo "address=/.dev/127.0.0.1" > /usr/local/etc/dnsmasq.conf
+
+sudo cp -fv /usr/local/opt/dnsmasq/*.plist /Library/LaunchDaemons
+sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
+
+# Check available interfaces with `networksetup listallnetworkservices`
+sudo networksetup -setdnsservers Ethernet 127.0.0.1 8.8.8.8 8.8.4.4
+sudo networksetup -setdnsservers Wi-Fi 127.0.0.1 8.8.8.8 8.8.4.4
