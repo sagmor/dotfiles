@@ -9,7 +9,9 @@ alias j="fasd_cd -d"
 unalias gst
 alias git="hub"
 alias gl="git pull"
+alias gaa="git add --all"
 alias grc='git rebase --continue'
 
 # Bundle
-alias bi="bundle install --path vendor"
+alias bi="bundle install --path=vendor/bundle --binstubs=vendor/bundle/bin --jobs=2"
+alias bil="bundle install --local"
