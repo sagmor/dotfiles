@@ -11,12 +11,16 @@ ln -s $HOME/.dotfiles/zsh/after $HOME/.zsh.after
 ln -s $HOME/.dotfiles/git/config $HOME/.gitconfig.user
 ln -s $HOME/.dotfiles/vim/vimrc.after $HOME/.vimrc.after
 
+# Install Ruby
+brew install rbenv
+brew install ruby-build rbenv-aliases rbenv-gem-rehash rbenv-vars rbenv-ctags rbenv-default-gems
+ln -s $HOME/.dotfiles/ruby/railsrc $HOME/.railsrc
+ln -s $HOME/.dotfiles/ruby/default-gems /usr/local/var/rbenv/default-gems
+
 # Install homebrew Cask
 brew tap phinze/homebrew-cask
 brew install brew-cask
 
-brew install macvim --custom-icons
-brew linkapps
 
 #install apps
 # adium arduino vlc transmit transmission spotify onepassword kindle iterm2 heroku-toolbelt google-hangouts google-chrome github evernote firefox dropbox
