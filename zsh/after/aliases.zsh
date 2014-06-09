@@ -9,6 +9,7 @@ alias j="fasd_cd -d"
 unalias gst
 alias git="hub"
 alias gl="git pull"
+alias glp="git pull && git push"
 alias gaa="git add --all"
 alias grc='git rebase --continue'
 

@@ -14,3 +14,7 @@
 
 [core]
   excludesfile = ~/.dotfiles/git/gitignore
+
+[alias]
+  br = branch
+  stable = push origin master:stable
