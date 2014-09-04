@@ -18,3 +18,4 @@
 [alias]
   br = branch
   stable = push origin master:stable
+  heroku = push heroku master
