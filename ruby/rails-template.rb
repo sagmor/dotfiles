@@ -8,7 +8,13 @@ gem_group :development, :test do
   gem "rspec-rails"
 end
 
-initializer 'bloatlol.rb', <<-CODE
+# Some default inflections
+initializer 'inflections.rb', <<-CODE
+ActiveSupport::Inflector.inflections(:en) do |inflect|
+  inflect.acronym 'OAuth'
+  inflect.acronym 'API'
+  inflect.acronym 'APIs'
+end
 CODE
 
 # Now run bundle install
