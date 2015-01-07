@@ -16,8 +16,9 @@
   excludesfile = ~/.dotfiles/git/gitignore
 
 [alias]
-  br = branch
+  br     = branch
   stable = push origin master:stable
   heroku = push heroku master
   squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; };f"
+  amend  = commit --amend --no-edit
 
