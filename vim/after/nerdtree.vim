@@ -3,3 +3,5 @@ autocmd vimenter * if !argc() | NERDTree | endif
 
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q
+
+let NERDTreeShowHidden=1
