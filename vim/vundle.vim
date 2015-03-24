@@ -1,2 +1,4 @@
-Bundle 'mustache/vim-mustache-handlebars'
-Bundle "mattn/emmet-vim"
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'mattn/emmet-vim'
+Plugin 'rizzatti/dash.vim'
+
