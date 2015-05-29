@@ -1,0 +1,20 @@
+- clean: []
+- link:
+    ~/.tmux.conf: tmux.conf
+    ~/.gitconfig: gitconfig
+    ~/.gitignore: gitignore
+
+    # Vim
+    ~/.vim: vim/
+    ~/.vimrc: vim/vimrc
+
+    # zsh
+    ~/.zsh: zsh/
+    ~/.zlogin: zsh/zlogin
+    ~/.zlogout: zsh/zlogout
+    ~/.zprezto: zsh/zprezto
+    ~/.zpreztorc: zsh/zpreztorc
+    ~/.zprofile: zsh/zprofile
+    ~/.zshenv: zsh/zshenv
+    ~/.zshrc: zsh/zshrc
+- shell: []

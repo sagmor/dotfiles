@@ -1,0 +1,6 @@
+[color]
+	ui = auto
+[core]
+	excludesfile = ~/.gitignore
+[include]
+	path = ~/.gituser
