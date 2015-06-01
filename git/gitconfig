@@ -4,3 +4,5 @@
 	excludesfile = ~/.gitignore
 [include]
 	path = ~/.gituser
+[push]
+	default = simple
