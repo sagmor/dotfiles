@@ -1,10 +1,9 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
+filetype off                  " required by Vundle
 
 " Setting up Vundle - the vim plugin bundler
 let VundleInstalled=1
-let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
-if !filereadable(vundle_readme)
+if !isdirectory(expand("~/.vim/bundle/Vundle.vim"))
     echo "Installing Vundle.."
     echo ""
     silent !mkdir -p ~/.vim/bundle
@@ -19,8 +18,12 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-"Add your bundles here
-Plugin 'chriskempson/base16-vim'
+" =============== Vundle Initialization ===============
+" This loads all the plugins specified in ~/.vim/bundle.vim
+" Use Vundle plugin to manage all other plugins
+if filereadable(expand("~/.vim/bundle.vim"))
+  source ~/.vim/bundle.vim
+endif
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -31,17 +34,9 @@ if VundleInstalled == 0
     echo ""
    :PluginInstall
 endif
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-let base16colorspace=256  " Access colors present in 256 colorspace
-set background=dark
-colorscheme base16-railscasts
+
+" Load ~/.vim/settings/*.vim
+let vimsettings = '~/.vim/settings'
+for fpath in split(globpath(vimsettings, '*.vim'), '\n')
+	exe 'source' fpath
+endfor

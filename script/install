@@ -2,12 +2,13 @@
 
 set -e
 
-CONFIG="config/Common.yml"
-DOTBOT_DIR="dotbot"
-
-DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(pwd)"
+DOTBOT_BIN="dotbot/bin/dotbot"
 
-git submodule update --init --recursive "${DOTBOT_DIR}"
+git submodule update --init --recursive
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+"${BASEDIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "config/Common.yml"
+
+if [[ -s "config/`uname -s`.yml" ]]; then
+	"${BASEDIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "config/`uname -s`.yml"
+fi

@@ -1,8 +1,8 @@
-- clean: []
+- clean: ['~']
 - link:
     ~/.tmux.conf: tmux.conf
-    ~/.gitconfig: gitconfig
-    ~/.gitignore: gitignore
+    ~/.gitconfig: git/gitconfig
+    ~/.gitignore: git/gitignore
 
     # Vim
     ~/.vim: vim/
@@ -12,7 +12,7 @@
     ~/.zsh: zsh/
     ~/.zlogin: zsh/zlogin
     ~/.zlogout: zsh/zlogout
-    ~/.zprezto: zsh/zprezto
+    ~/.zprezto: zsh/plugins/prezto
     ~/.zpreztorc: zsh/zpreztorc
     ~/.zprofile: zsh/zprofile
     ~/.zshenv: zsh/zshenv
