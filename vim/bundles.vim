@@ -1,3 +1,4 @@
+NeoBundle 'tpope/vim-sensible'
 NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'editorconfig/editorconfig-vim'
