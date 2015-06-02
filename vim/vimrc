@@ -1,39 +1,36 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required by Vundle
+filetype off                  " required by NeoBundle
 
-" Setting up Vundle - the vim plugin bundler
-let VundleInstalled=1
-if !isdirectory(expand("~/.vim/bundle/Vundle.vim"))
-    echo "Installing Vundle.."
+" Setting up NeoBundle - the vim plugin bundler
+let NeoBundleInstalled=1
+if !isdirectory(expand("~/.vim/bundle/neobundle.vim"))
+    echo "Installing NeoBundle.."
     echo ""
     silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
-    let VundleInstalled=0
+    silent !git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+    let NeoBundleInstalled=0
 endif
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
+" set the runtime path to include NeoBundle and initialize
+set rtp+=~/.vim/bundle/neobundle.vim/
+call neobundle#begin(expand('~/.vim/bundle/'))
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+" let NeoBundle manage Vundle, required
+NeoBundleFetch 'Shougo/neobundle.vim'
 
-" =============== Vundle Initialization ===============
-" This loads all the plugins specified in ~/.vim/bundle.vim
-" Use Vundle plugin to manage all other plugins
-if filereadable(expand("~/.vim/bundle.vim"))
-  source ~/.vim/bundle.vim
-endif
+" This loads all the plugins specified in ~/.vim/bundles.vim
+source ~/.vim/bundles.vim
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+call neobundle#end()
+
 filetype plugin indent on    " required
 
-if VundleInstalled == 0
+if NeoBundleInstalled == 0
     echo "Installing Bundles, please ignore key map error messages"
     echo ""
-   :PluginInstall
+   NeoBundleInstall
 endif
+NeoBundleCheck
 
 " Load ~/.vim/settings/*.vim
 let vimsettings = '~/.vim/settings'

@@ -1,0 +1,6 @@
+NeoBundle 'chriskempson/base16-vim'
+NeoBundle 'christoomey/vim-tmux-navigator'
+NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimfiler.vim'
