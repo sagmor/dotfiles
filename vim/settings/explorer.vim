@@ -25,3 +25,6 @@ autocmd FileType vimfiler nmap <silent><buffer><expr> <CR> vimfiler#smart_cursor
 
 " Keep cursor on opened directory
 let g:vimfiler_expand_jump_to_first_child = 0
+
+" Keymaps
+nnoremap <Leader>e :VimFiler<CR>
