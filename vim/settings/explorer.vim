@@ -1,3 +1,7 @@
+" Split explorer approach based on concepts from:
+" http://vimcasts.org/blog/2013/01/oil-and-vinegar-split-windows-and-project-drawer/
+
+
 " Disable netrw.vim
 let g:loaded_netrwPlugin = 1
 
