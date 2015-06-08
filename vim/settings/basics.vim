@@ -1,2 +1,5 @@
 " Set leader key 
-:let mapleader = "`"
+:let mapleader = ","
+
+" Fast :
+nmap ; :
