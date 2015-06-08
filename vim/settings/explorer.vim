@@ -16,12 +16,20 @@ let g:vimfiler_tree_leaf_icon = ' '
 let g:vimfiler_tree_opened_icon = '▾'
 let g:vimfiler_tree_closed_icon = '▸'
 let g:vimfiler_file_icon = '-'
-let g:vimfiler_marked_file_icon = '*'
+let g:vimfiler_marked_file_icon = '✓'
+let g:vimfiler_readonly_file_icon = '✗'
 
-" Expand directories in explorer
-autocmd FileType vimfiler nmap <silent><buffer><expr> <CR> vimfiler#smart_cursor_map(
-			\ "\<Plug>(vimfiler_expand_tree)",
-			\ "\<Plug>(vimfiler_edit_file)")
+" Customize vimfiler
+autocmd! FileType vimfiler call s:my_vimfiler_settings()
+function! s:my_vimfiler_settings()
+	" Tree navigation mappings
+	nmap <buffer> <CR>    <Plug>(vimfiler_expand_or_edit)
+	nmap <buffer> l       <Plug>(vimfiler_expand_tree)
+	nmap <buffer> h       <Plug>(vimfiler_expand_tree)
+	nmap <buffer> <Left>  <Plug>(vimfiler_expand_tree)
+	nmap <buffer> <Right> <Plug>(vimfiler_expand_tree)
+
+endfunction
 
 " Keep cursor on opened directory
 let g:vimfiler_expand_jump_to_first_child = 0
