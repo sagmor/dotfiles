@@ -12,3 +12,8 @@ __git_files () {
 # Aliases
 alias g=git
 alias gs="git status"
+alias gp="git push"
+alias gpp="git pull && git push"
+alias gc="git commit"
+alias gaa="git add --all"
+
