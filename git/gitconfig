@@ -1,8 +1,25 @@
+[alias]
+  # branch
+  b = branch -v                     # branch (verbose)
+
+  # commit
+  amend = commit --amend            # amend your last commit
+
+  # checkout
+  co = checkout                     # checkout
+  nb = checkout -b                  # create and switch to a new branch (mnemonic: "git new branch branchname...")
+
+  # rebase
+  rc = rebase --continue            # continue rebase
+  rs = rebase --skip                # skip rebase
+[branch]
+  autosetupmerge = true
 [color]
-	ui = auto
+  ui = true
 [core]
-	excludesfile = ~/.gitignore
+  editor = vim
+  excludesfile = ~/.gitignore
 [include]
-	path = ~/.gituser
+  path = ~/.gituser
 [push]
-	default = simple
+  default = simple
