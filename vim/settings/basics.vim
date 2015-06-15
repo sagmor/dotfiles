@@ -1,6 +1,10 @@
 " Set leader key 
 :let mapleader = ","
 
+" Quick :
+nnoremap ; :
+vnoremap ; :
+
 " Search
 " Inspired in
 " http://stevelosh.com/blog/2010/09/coming-home-to-vim/#important-vimrc-lines
