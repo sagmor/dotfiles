@@ -8,12 +8,30 @@ NeoBundle 'Shougo/vimproc.vim', {
 	\    },
 	\ }
 
+" Basics
 NeoBundle 'tpope/vim-sensible'
-NeoBundle 'chriskempson/base16-vim'
-NeoBundle 'christoomey/vim-tmux-navigator'
-NeoBundle 'editorconfig/editorconfig-vim'
-NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'tpope/vim-repeat'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimfiler.vim'
+
+" General text edition
+NeoBundle 'tpope/vim-commentary'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-sleuth'
+NeoBundle 'editorconfig/editorconfig-vim'
+
+" Colors
+NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'bling/vim-airline'
+NeoBundle 'edkolev/tmuxline.vim'
+
+"Navigation
+NeoBundle 'christoomey/vim-tmux-navigator'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'Shougo/vimfiler.vim'
+NeoBundle 'epmatsw/ag.vim'
+
+" Languages
+"" Ruby
 NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-bundler'
