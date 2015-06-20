@@ -1,5 +1,6 @@
 - clean: ['~']
 - link:
+    ~/.bin: bin
     ~/.tmux.conf: tmux.conf
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
