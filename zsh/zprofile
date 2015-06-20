@@ -74,13 +74,6 @@ fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
 
-# rbenv
-if [[ -s "/usr/local/var/rbenv" ]]; then
-  export RBENV_ROOT=/usr/local/var/rbenv
-  path=("$RBENV_ROOT/bin" $path)
-  eval "$(rbenv init - --no-rehash zsh)"
-fi
-
 
 # Source ZSH profile settings
 for config_file ($HOME/.zsh/profile/*.zsh) source $config_file
