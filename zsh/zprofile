@@ -43,6 +43,7 @@ typeset -gU cdpath fpath mailpath path
 
 # Set the list of directories that Zsh searches for programs.
 path=(
+  ~/.bin
   /usr/local/{bin,sbin}
   $path
 )
@@ -79,3 +80,7 @@ if [[ -s "/usr/local/var/rbenv" ]]; then
   path=("$RBENV_ROOT/bin" $path)
   eval "$(rbenv init - --no-rehash zsh)"
 fi
+
+
+# Source ZSH profile settings
+for config_file ($HOME/.zsh/profile/*.zsh) source $config_file
