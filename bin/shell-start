@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# shell-start
+#
+# Script to launch on new terminal windows
+# It forwards to more specific shells
+
+while true; do
+cat - <<EOF
+	1) Join current Hacking session
+	2) Join Project session
+	3) Connect to remote host
+	4) Join other session
+	5) Launch shell
+EOF
+	printf "Select an option: "
+	read -n 1 option
+	echo ""
+
+	case $option in
+		1) # Join current Hacking session
+			exec $SHELL --login -c "shell-join Hacking"
+			;;
+		2) # Join Project session
+			exec $SHELL --login -c shell-project
+			;;
+		3) # Connect to remote host
+			exec $SHELL --login -c shell-host
+			;;
+		4) # Join other session
+			exec $SHELL --login -c shell-join
+			;;
+		5) # Launch shell
+			exec $SHELL --login
+			;;
+		*) # Any other thing
+			echo "Wrong option"
+			;;
+	esac
+done
