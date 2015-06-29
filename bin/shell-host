@@ -1,0 +1,18 @@
+#!/bin/bash
+
+trim() { echo $1; }
+
+HOSTS_PATH="$HOME/.dotfiles/hosts"
+
+if [[ -z "$1" ]]; then
+	PS3="Choose the host you want to connect: "
+	HOSTS=($(ls $HOSTS_PATH | grep ".sh" | sed -e 's/\.sh//'))
+
+	select host in "${HOSTS[@]}"
+	do
+		exec $SHELL --login -c "shell-host $host"
+	done
+fi
+
+echo "Connectiong to $1..."
+sh "$HOSTS_PATH/$1.sh"
