@@ -1,0 +1,23 @@
+#!/bin/bash
+
+trim() { echo $1; }
+
+PROJECTS_PATH="$HOME/.dotfiles/projects"
+
+if [[ -z "$1" ]]; then
+	PS3="Choose your project: "
+	PROJECTS=($(ls $PROJECTS_PATH | grep ".sh" | sed -e 's/\.sh//'))
+
+	select project in "${PROJECTS[@]}"
+	do
+		exec $SHELL --login -c "shell-project $project"
+	done
+fi
+
+check=$(trim `tmux ls | grep "^$1:" | wc -l`)
+if [[ "$check" == "0" ]]; then
+	tmux new-session -s $1 -d
+	SESSION=$1 sh "$PROJECTS_PATH/$1.sh"
+fi
+
+exec $SHELL --login -c "shell-join $1"
