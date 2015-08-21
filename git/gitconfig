@@ -17,6 +17,7 @@
   stable = push origin master:stable
 [branch]
   autosetupmerge = true
+  autosetuprebase = always
 [color]
   ui = true
 [core]
