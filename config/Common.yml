@@ -5,6 +5,7 @@
     ~/.tmux.conf: tmux.conf
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
+    ~/.bundle: ruby/bundler
 
     # Vim
     ~/.vim: vim/
