@@ -1,4 +1,6 @@
 ---
-BUNDLE_GEM__COC: true
-BUNDLE_GEM__MIT: true
+BUNDLE_GEM__COC: 'true'
+BUNDLE_GEM__MIT: 'true'
 BUNDLE_GEM__TEST: rspec
+BUNDLE_PATH: ".bundle/gems"
+BUNDLE_BIN: ".bundle/bin"
