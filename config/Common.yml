@@ -6,6 +6,7 @@
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
     ~/.bundle: ruby/bundler
+    ~/.gemrc: ruby/gemrc
 
     # Vim
     ~/.vim: vim/
