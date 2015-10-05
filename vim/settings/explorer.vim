@@ -8,6 +8,9 @@ let g:loaded_netrwPlugin = 1
 "Set VimFiler as default explorer
 :let g:vimfiler_as_default_explorer = 1
 
+" Set VimFiler data directory
+let g:vimfiler_data_directory = expand("~/.vim/cache/vimfiler")
+
 " Ignored files
 let g:vimfiler_ignore_pattern = '^\%(\.git\|\.DS_Store\)$'
 
