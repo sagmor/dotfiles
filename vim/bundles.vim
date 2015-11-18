@@ -35,3 +35,7 @@ NeoBundle 'epmatsw/ag.vim'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-bundler'
+
+"" React
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'mxw/vim-jsx'
