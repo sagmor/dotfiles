@@ -30,6 +30,11 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'epmatsw/ag.vim'
 
+"Snipets
+NeoBundle 'MarcWeber/vim-addon-mw-utils'
+NeoBundle 'tomtom/tlib_vim'
+NeoBundle 'garbas/vim-snipmate'
+
 " Languages
 "" Ruby
 NeoBundle 'vim-ruby/vim-ruby'
