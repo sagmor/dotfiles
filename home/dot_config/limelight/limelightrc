@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+# See:  https://github.com/koekeishiya/limelight/blob/master/examples/limelightrc
+limelight -m config width            3
+limelight -m config radius           13
+limelight -m config placement        exterior
+limelight -m config active_color     0xff24ccaa
+limelight -m config normal_color     0x66ffffff
+
+echo "limelight configuration loaded.."

@@ -1,0 +1,25 @@
+#!/usr/bin/env sh
+
+# general space settings
+yabai -m config layout                       bsp
+yabai -m config top_padding                  20
+yabai -m config bottom_padding               20
+yabai -m config left_padding                 20
+yabai -m config right_padding                20
+yabai -m config window_gap                   15
+
+# un-managed apps
+yabai -m rule --add app="System Preferences" manage=off
+yabai -m rule --add app="Finder" manage=off
+yabai -m rule --add app="Spotify" manage=off
+yabai -m rule --add app="Todoist" manage=off
+
+# Refresh
+yabai -m signal --add event=display_removed action="launchctl kickstart -k \"gui/${UID}/homebrew.mxcl.yabai\""
+yabai -m signal --add event=display_added   action="launchctl kickstart -k \"gui/${UID}/homebrew.mxcl.yabai\""
+
+# kill any existing limelight process if one exists, before we launch a new one
+killall limelight &> /dev/null
+limelight &> /dev/null &
+
+echo "yabai configuration loaded.."
