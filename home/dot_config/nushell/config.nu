@@ -1,23 +1,11 @@
 # Nushell Config File
 
-let-env PATH = [
-  ("~/go/bin" | path expand)
-  ("~/.cargo/bin" | path expand)
-  /Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home/bin
-  ("~/airlab/runtime_gems/tools/bin" | path expand)
-  /usr/local/bin
-  /usr/bin
-  /bin
-  /usr/sbin
-  /sbin
-  /opt/airbnb/bin
-  /usr/local/munki
-  /usr/local/osquery/bin
-  /opt/puppetlabs/bin
-]
-
-
-let-env PROMPT_COMMAND = "starship prompt"
+# Load all files on the config.d directory
+# ls ~/.config/nushell/config.d/*.nu | each { |f| source $f }
+source ~/.config/nushell/config.d/0-path.nu
+source ~/.config/nushell/config.d/git.nu
+source ~/.config/nushell/config.d/prompt.nu
+# source ~/.config/nushell/config.d/zoxide.nu
 
 # Specifies how environment variables are:
 # - converted from a string to a value on Nushell startup (from_string)
