@@ -9,7 +9,7 @@ hyper - right : yabai -m window --swap east
 # Open new terminal
 hyper - t : /Applications/Alacritty.app/Contents/MacOS/alacritty
 
-hyper - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+hyper - r : brew services restart yabai
 
 hyper - space : yabai -m window --toggle zoom-fullscreen
 
