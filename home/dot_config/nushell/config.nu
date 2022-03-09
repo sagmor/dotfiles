@@ -1,29 +1,23 @@
 # Nushell Config File
 
-def create_left_prompt [] {
-    let path_segment = ($nu.cwd)
+let-env PATH = [
+  ("~/go/bin" | path expand)
+  ("~/.cargo/bin" | path expand)
+  /Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home/bin
+  ("~/airlab/runtime_gems/tools/bin" | path expand)
+  /usr/local/bin
+  /usr/bin
+  /bin
+  /usr/sbin
+  /sbin
+  /opt/airbnb/bin
+  /usr/local/munki
+  /usr/local/osquery/bin
+  /opt/puppetlabs/bin
+]
 
-    $path_segment
-}
 
-def create_right_prompt [] {
-    let time_segment = ([
-        (date now | date format '%m/%d/%Y %r')
-    ] | str collect)
-
-    $time_segment
-}
-
-# Use nushell functions to define your right and left prompt
-let-env PROMPT_COMMAND = { create_left_prompt }
-let-env PROMPT_COMMAND_RIGHT = { create_right_prompt }
-
-# The prompt indicators are environmental variables that represent
-# the state of the prompt
-let-env PROMPT_INDICATOR = "〉"
-let-env PROMPT_INDICATOR_VI_INSERT = ": "
-let-env PROMPT_INDICATOR_VI_NORMAL = "〉"
-let-env PROMPT_MULTILINE_INDICATOR = "::: "
+let-env PROMPT_COMMAND = "starship prompt"
 
 # Specifies how environment variables are:
 # - converted from a string to a value on Nushell startup (from_string)
