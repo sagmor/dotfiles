@@ -1,0 +1,8 @@
+[tools]
+atuin = "latest"
+jq = "latest"
+neovim = "latest"
+shellcheck = "latest"
+starship = "latest"
+tmux = "latest"
+zoxide = "latest"
