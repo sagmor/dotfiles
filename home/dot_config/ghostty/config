@@ -1,0 +1,13 @@
+# See: https://ghostty.org/docs/config
+
+# https://catskull.net/fun-with-ghostty-shaders.html
+custom-shader = ~/.config/ghostty/shaders/cubes.glsl
+
+# Always lunch in tmux
+command = ~/.local/share/mise/shims/tmuxmise 
+
+# Quake-like terminal toggle with cmd+`
+keybind = global:cmd+grave_accent=toggle_quick_terminal
+
+# https://github.com/catppuccin/ghostty
+theme = catppuccin-frappe.conf
