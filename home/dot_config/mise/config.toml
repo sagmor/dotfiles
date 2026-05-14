@@ -2,6 +2,7 @@
 atuin = "latest"
 jq = "latest"
 neovim = "latest"
+pi = "latest"
 shellcheck = "latest"
 starship = "latest"
 tmux = "latest"
