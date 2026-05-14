@@ -1,0 +1,124 @@
+[push]
+	default = current
+	autoSetupRemote = true
+
+[rerere]
+	# save conflict resolution outcomes so that in the case that you hit
+	# conflicts you only have to resolve them once.
+	enabled = true
+
+[core]
+	precomposeunicode = true
+	excludesfile = ~/.config/git/gitignore
+
+	# Global Hooks
+	hooksPath = ~/.config/git/hooks
+
+[pull]
+	# only accept fast-forwards when doing a bare `git pull`
+	ff = only
+
+[merge]
+	conflictstyle = zdiff3
+	keepbackup = false
+
+[rebase]
+	# Run git stash before a rebase and git stash pop after.
+	autostash = true
+
+	# Rebase stacked branches
+	# https://andrewlock.net/working-with-stacked-branches-in-git-is-easier-with-update-refs/
+	updateRefs = true
+	autosquash = true
+
+[status]
+	# https://hachyderm.io/@unlambda/111942468084436716#.
+	submoduleSummary = true
+
+[log]
+	date = iso
+
+[help]
+	autocorrect = prompt
+
+[color]
+	status = auto
+	diff = auto
+	branch = auto
+	interactive = auto
+	grep = auto
+	ui = auto
+
+[alias]
+	st = status
+	co = checkout
+	graph = log --oneline --graph
+
+	# NoOp/Empty commit (usefull to wake up spinnaker branches)
+	noop = commit --allow-empty --message=NoOp
+
+	# Rebase orign main
+	prom = !git fetch origin && git rebase --autostash origin/main
+
+	# Amend the current commit
+	amend = commit --amend --no-edit
+
+	# Add a pattern/file to the local exclussion list
+	exclude = "!f() { echo $@ >> .git/info/exclude; }; f"
+
+# Use a pager for large output, just like other git commands.
+[pager]
+    difftool = true
+
+[diff]
+	algorithm = histogram
+    tool = difftastic
+	submodule = log
+
+[difftool]
+        prompt = false
+
+[fetch]
+	# Automatically prune deleted remote branches
+	prune = true
+	pruneTags = true
+
+[init]
+	defaultBranch = main
+
+[advice]
+	# Don't notify of skipped commits
+	skippedCherryPicks = false
+
+[submodule]
+	recurse = true
+
+[tag]
+	sort = taggerdate
+
+[branch]
+	sort = -committerdate
+
+# Disable pushes to main branches, Always use PRs
+#
+# Alternatively can be bypassed by explicitly setting the remote as in:
+# ```
+# git push origin main
+# ```
+[branch "main"]
+	pushRemote = DISABLED
+
+[branch "master"]
+	pushRemote = DISABLED
+
+# Include os specific configs.
+[include]
+	path = config.{{ .chezmoi.os }}
+
+# Include work config if it exists.
+[include]
+	path = config.work
+
+# Include any local config if it exists.
+[include]
+	path = config.local

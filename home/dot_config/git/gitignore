@@ -1,0 +1,10 @@
+# OSX Files
+.DS_Store
+
+# VSCode local configs
+.vscode/
+
+tmp/
+
+# Mise local config
+mise.local.toml

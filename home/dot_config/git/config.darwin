@@ -1,0 +1,17 @@
+# Use Git credential manager from home brew
+[credential]
+        helper = /usr/local/share/gcm-core/git-credential-manager
+
+
+# Sign commits using 1Password
+[user]
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGBmG474LBvUyj6/+Tpm7jKL3Wg3ceXAH1HdpaAVD7DB
+
+[commit]
+    gpgsign = true
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
