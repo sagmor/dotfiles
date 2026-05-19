@@ -3,8 +3,8 @@
 # https://catskull.net/fun-with-ghostty-shaders.html
 custom-shader = ~/.config/ghostty/shaders/cubes.glsl
 
-# Always lunch in tmux
-command = ~/.local/share/mise/shims/tmuxmise 
+#u Always lunch in tmux
+command = ~/.local/share/mise/shims/tmux
 
 # Quake-like terminal toggle with cmd+`
 keybind = global:cmd+grave_accent=toggle_quick_terminal
