@@ -122,3 +122,7 @@
 # Include any local config if it exists.
 [include]
 	path = config.local
+
+[includeIf "gitdir:~/ghq/github.com/"]
+    path = ~/.config/git/partials/user-personal
+
