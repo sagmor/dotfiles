@@ -1,5 +1,6 @@
 [tools]
 atuin = "latest"
+chezmoi = "latest"
 ghq = "latest"
 jq = "latest"
 neovim = "latest"
